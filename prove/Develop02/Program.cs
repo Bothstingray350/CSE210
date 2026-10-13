@@ -26,10 +26,12 @@ class Program
             int userInput;
             try
             {
+                // Attempt to parse input to use in switch
                 userInput = int.Parse(userInputStr);
             }
             catch (FormatException)
             {
+                // Set userInput to 0 to tell user input was invalid
                 userInput = 0;
             }
 
@@ -38,6 +40,10 @@ class Program
 
             switch (userInput)
             {
+                // Display error with parse
+                case 0:
+                    Console.WriteLine($"Invalid input {userInputStr}, please try again");
+                    break;
                 // Write
                 case 1:
                     journal1.AddEntry();
@@ -67,6 +73,7 @@ class Program
                     LETMEOUT = true;
                     Console.WriteLine("Goodbye!");
                     break;
+                // Catch any other invalid input
                 default:
                     Console.WriteLine($"Invalid input, please try again\n");
                     break;
