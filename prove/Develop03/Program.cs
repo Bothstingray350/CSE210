@@ -57,6 +57,7 @@ class Program
             }
             else
             {
+                Console.Clear();
                 Console.WriteLine("Invalid input, try again");
             }
         }
