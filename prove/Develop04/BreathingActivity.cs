@@ -1,9 +1,13 @@
 public class BreathingActivity : Activity
 {
-    public BreathingActivity(string title, string description, int duration) :base(title, description, duration){}
+    public BreathingActivity()
+    {
+        _title = "A";
+        _description = "B";
+    }
 
     public void BeginActivity()
     {
-        
+
     }
 }

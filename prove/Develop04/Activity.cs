@@ -1,15 +1,8 @@
 public class Activity
 {
-    private string _title;
-    private string _description;
+    protected string _title;
+    protected string _description;
     private int _duration;
-
-    public Activity(string title, string description, int duration)
-    {
-        _title = title;
-        _description = description;
-        _duration = duration;
-    }
 
     public int GetDuration()
     {
