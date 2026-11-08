@@ -11,12 +11,13 @@ public class Activity
 
     public void DisplayIntro()
     {
+        Console.Clear();
         Console.WriteLine($"Welcome to the {_title}.\n\n{_description}\n");
         while (true)
         {
             try
             {    
-                Console.WriteLine("How long (in seconds) would you like the activity to be?");
+                Console.Write("How long (in seconds) would you like the activity to be?: ");
                 _duration = int.Parse(Console.ReadLine());
                 break;
             }
@@ -29,6 +30,10 @@ public class Activity
 
     public void DisplayOutro()
     {
+        Console.Clear();
         Console.WriteLine($"You have successfully completed {_duration} seconds of the {_title}!");
+        Console.Write("Returning to Main menu in: ");
+        Animations.CountDown(5);
+        Console.Clear();
     }
 }
