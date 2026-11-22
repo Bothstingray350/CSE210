@@ -1,20 +1,30 @@
+using System.ComponentModel;
+
 class SimpleGoal : Goal
 {
     private bool _completed;
 
-    public SimpleGoal(string title, string description, int points) : base(title, description, points)
+    public SimpleGoal(string title, string description, int points, bool completed) : base(title, description, points)
     {
-        _completed = false;
+        _completed = completed;
     }
 
     public override string GetSaveString()
     {
-        return $"S|{_title}|{_description}|{_points}|{_completed}";
+        return $"Simple|{_title}|{_description}|{_points}|{_completed}";
     }
-    
+
     public override void Display()
     {
-        Console.WriteLine($"Simple Goal");
+        string isComplete;
+        if(_completed)
+        {
+            isComplete = "X";
+        } else
+        {
+            isComplete = " ";
+        }
+        Console.WriteLine($"[{isComplete}] {_title}: {_description}");
     }
 
     public override int Progress()
